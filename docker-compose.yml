@@ -17,7 +17,7 @@ services:
       MONGODB_URI: mongodb://mongo:27017/payload
       PORT: 3000
       NODE_ENV: development
-      PAYLOAD_SECRET: TESTING
+      PAYLOAD_SECRET: "Y8gc7t6Zb8hMA8"
 
   mongo:
     image: mongo:latest
