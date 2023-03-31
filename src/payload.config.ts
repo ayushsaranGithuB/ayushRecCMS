@@ -9,7 +9,7 @@ import Genres from './collections/Genres';
 
 
 export default buildConfig({
-  serverURL: 'http://localhost:3000',
+  serverURL: process.env.PAYLOAD_URL,
   admin: {
     user: Users.slug,
     css: path.resolve(__dirname, '../css/admin.css'),
