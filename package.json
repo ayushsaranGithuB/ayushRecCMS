@@ -2,7 +2,7 @@
   "name": "sandox-payload",
   "description": "Payload project created from blog template",
   "version": "1.0.0",
-  "main": "dist/server.js",
+  // "main": "dist/server.js",
   "license": "MIT",
   "scripts": {
     "dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
