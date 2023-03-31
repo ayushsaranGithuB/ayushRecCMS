@@ -14,7 +14,7 @@ services:
     depends_on:
       - mongo
     environment:
-      MONGODB_URI: mongodb://mongo:27017/payload
+      MONGODB_URI: mongodb+srv://clusterreviews.c4pf1mt.mongodb.net/payload
       PORT: 3000
       NODE_ENV: development
       PAYLOAD_SECRET: "Y8gc7t6Zb8hMA8"
