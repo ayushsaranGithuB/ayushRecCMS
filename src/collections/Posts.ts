@@ -23,9 +23,9 @@ const Posts: CollectionConfig = {
       type: 'number',
     },
     {
-      name: 'thumbnail', // required
-      type: 'upload', // required
-      relationTo: 'media', // required
+      name: 'thumbnail', 
+      type: 'upload', 
+      relationTo: 'media', 
     },
     {
       name: 'yearRelease',
