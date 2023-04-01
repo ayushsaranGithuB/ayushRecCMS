@@ -1,101 +1,96 @@
-import { CollectionConfig } from 'payload/types';
+import { CollectionConfig } from "payload/types";
 
 const Posts: CollectionConfig = {
-  slug: 'posts',
+  slug: "posts",
   admin: {
-    defaultColumns: ['title','imdbLink', 'author', 'category', 'tags', 'status'],
-    useAsTitle: 'title',
+    defaultColumns: ["title", "imdbLink", "author", "tags", "status"],
+    useAsTitle: "title",
   },
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: 'title',
-      type: 'text',
+      name: "title",
+      type: "text",
     },
     {
-      name: 'imdbLink',
-      type: 'text',
+      name: "imdbLink",
+      type: "text",
     },
     {
-      name: 'imdbScore',
-      type: 'number',
+      name: "imdbScore",
+      type: "number",
     },
     {
-      name: 'thumbnail', 
-      type: 'upload', 
-      relationTo: 'media', 
+      name: "thumbnail",
+      type: "upload",
+      relationTo: "media",
     },
     {
-      name: 'yearRelease',
-      type: 'number',
+      name: "yearRelease",
+      type: "number",
     },
     {
-      name: 'countryRegion',
-      type: 'text',
+      name: "countryRegion",
+      type: "text",
     },
     {
-      name: 'author',
-      type: 'relationship',
-      relationTo: 'users',
+      name: "author",
+      type: "relationship",
+      relationTo: "users",
     },
     {
-      name: 'publishedDate',
-      type: 'date',
+      name: "publishedDate",
+      type: "date",
     },
     {
-      name: 'category',
-      type: 'relationship',
-      relationTo: 'categories'
-    },
-    {
-      name: 'tags',
-      type: 'relationship',
-      relationTo: 'tags',
+      name: "tags",
+      type: "relationship",
+      relationTo: "tags",
       hasMany: true,
     },
     {
-      name: 'genres',
-      type: 'relationship',
-      relationTo: 'genres',
+      name: "genres",
+      type: "relationship",
+      relationTo: "genres",
       hasMany: true,
     },
     {
-      name: 'plotSynopsis',
-      type: 'richText'
+      name: "plotSynopsis",
+      type: "richText",
     },
     {
-      name: 'externalReviews',
-      type: 'richText'
+      name: "externalReviews",
+      type: "richText",
     },
     {
-      name: 'whyWatch',
-      type: 'richText'
+      name: "whyWatch",
+      type: "richText",
     },
     {
-      name: 'starVerdict',
-      type: 'number'
+      name: "starVerdict",
+      type: "number",
     },
     {
-      name: 'status',
-      type: 'select',
+      name: "status",
+      type: "select",
       options: [
         {
-          value: 'draft',
-          label: 'Draft',
+          value: "draft",
+          label: "Draft",
         },
         {
-          value: 'published',
-          label: 'Published',
+          value: "published",
+          label: "Published",
         },
       ],
-      defaultValue: 'draft',
+      defaultValue: "draft",
       admin: {
-        position: 'sidebar',
-      }
-    }
+        position: "sidebar",
+      },
+    },
   ],
-}
+};
 
 export default Posts;
