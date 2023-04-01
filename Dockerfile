@@ -1,10 +1,26 @@
-FROM node:lts-alpine
-ENV NODE_ENV=production
-WORKDIR /usr/src/app
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install --production --silent && mv node_modules ../
+FROM node:18.8-alpine as base
+
+FROM base as builder
+
+WORKDIR /home/node/app
+COPY package*.json ./
+
 COPY . .
+RUN npm install
+RUN npm run build
+
+FROM base as runtime
+
+ENV NODE_ENV=production
+ENV PAYLOAD_CONFIG_PATH=dist/payload.config.js
+
+WORKDIR /home/node/app
+COPY package*.json  ./
+
+RUN npm install --production
+COPY --from=builder /home/node/app/dist ./dist
+COPY --from=builder /home/node/app/build ./build
+
 EXPOSE 3000
-RUN chown -R node /usr/src/app
-USER node
-CMD ["npm", "start"]
+
+CMD ["node", "dist/server.js"]
