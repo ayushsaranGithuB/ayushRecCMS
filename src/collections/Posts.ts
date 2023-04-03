@@ -58,15 +58,15 @@ const Posts: CollectionConfig = {
     },
     {
       name: "plotSynopsis",
-      type: "richText",
+      type: "textarea",
     },
     {
       name: "externalReviews",
-      type: "richText",
+      type: "textarea",
     },
     {
       name: "whyWatch",
-      type: "richText",
+      type: "textarea",
     },
     {
       name: "starVerdict",
