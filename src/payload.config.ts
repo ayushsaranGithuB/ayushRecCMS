@@ -12,7 +12,7 @@ import Genres from "./collections/Genres";
 const adapter = gcsAdapter({
   options: {
     // you can choose any method for authentication, and authorization which is being provided by `@google-cloud/storage`
-    keyFilename: './gcs-credentials.json',
+    keyFilename: path.resolve(__dirname, "../gcs-credentials.json"),
     },
   bucket: process.env.GCS_BUCKET,
 })
